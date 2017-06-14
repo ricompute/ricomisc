@@ -1,0 +1,16 @@
+Package: ricomisc
+Type: Package
+Title: Ricompute Miscellaneous
+Version: 0.1.0
+Authors@R: person("Richard", "Lindsey", email = "richard.c.lindsey@ricompute.com", 
+    role = c("aut", "cre"))
+Description: Miscellaneous R helper functions by and for RCL.
+License: GPL-3 | file LICENSE
+URL: https://github.com/ricompute/ricomisc
+BugReports: https://github.com/ricompute/ricomisc/issues
+Encoding: UTF-8
+LazyData: true
+Imports:
+    ggplot2,
+    rstudioapi
+RoxygenNote: 6.0.1
