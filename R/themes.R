@@ -7,17 +7,19 @@
 NULL
 
 #' @rdname ggplot2_themes
+#' @inheritParams ggplot2::theme_classic
+#' @inheritParams ggplot2::theme
 #' @export
 theme_paper <- function(base_size = 10,
-                        legend.key.size = unit(0.09, "in"),
-                        legend.title = element_blank(),
-                        axis.title.x = element_blank(),
-                        axis.text.x = element_text(size = 8),
-                        axis.ticks.x = element_blank(),
-                        axis.line.x = element_line(color = "black"),
-                        axis.line.y = element_line(color = "black"),
-                        plot.title = element_text(hjust = 0.5),
-                        strip.background = element_blank(),
+                        legend.key.size = ggplot2::unit(0.09, "in"),
+                        legend.title = ggplot2::element_blank(),
+                        axis.title.x = ggplot2::element_blank(),
+                        axis.text.x = ggplot2::element_text(size = 8),
+                        axis.ticks.x = ggplot2::element_blank(),
+                        axis.line.x = ggplot2::element_line(color = "black"),
+                        axis.line.y = ggplot2::element_line(color = "black"),
+                        plot.title = ggplot2::element_text(hjust = 0.5),
+                        strip.background = ggplot2::element_blank(),
                         ...) {
     ggplot2::theme_classic(base_size = base_size) +
         ggplot2::theme(legend.key.size = legend.key.size,
@@ -33,12 +35,14 @@ theme_paper <- function(base_size = 10,
 }
 
 #' @rdname ggplot2_themes
+#' @inheritParams ggplot2::theme_classic
+#' @inheritParams ggplot2::theme
 #' @export
 theme_poster <- function(base_size = 15,
-                         strip.background = element_blank(),
-                         panel.background = element_blank(),
-                         panel.grid.minor = element_line(color = "grey93"),
-                         plot.background = element_rect(fill = "transparent",
+                         strip.background = ggplot2::element_blank(),
+                         panel.background = ggplot2::element_blank(),
+                         panel.grid.minor = ggplot2::element_line(color = "grey93"),
+                         plot.background = ggplot2::element_rect(fill = "transparent",
                                                         color = NA),
                          ...) {
     ggplot2::theme_bw(base_size = base_size) +

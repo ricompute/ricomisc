@@ -6,18 +6,62 @@
 \alias{theme_poster}
 \title{Custom ggplot2 themes.}
 \usage{
-theme_paper(base_size = 10, legend.key.size = unit(0.09, "in"),
-  legend.title = element_blank(), axis.title.x = element_blank(),
-  axis.text.x = element_text(size = 8), axis.ticks.x = element_blank(),
-  axis.line.x = element_line(color = "black"),
-  axis.line.y = element_line(color = "black"),
-  plot.title = element_text(hjust = 0.5),
-  strip.background = element_blank(), ...)
+theme_paper(base_size = 10, legend.key.size = ggplot2::unit(0.09, "in"),
+  legend.title = ggplot2::element_blank(),
+  axis.title.x = ggplot2::element_blank(),
+  axis.text.x = ggplot2::element_text(size = 8),
+  axis.ticks.x = ggplot2::element_blank(),
+  axis.line.x = ggplot2::element_line(color = "black"),
+  axis.line.y = ggplot2::element_line(color = "black"),
+  plot.title = ggplot2::element_text(hjust = 0.5),
+  strip.background = ggplot2::element_blank(), ...)
 
-theme_poster(base_size = 15, strip.background = element_blank(),
-  panel.background = element_blank(), panel.grid.minor = element_line(color
-  = "grey93"), plot.background = element_rect(fill = "transparent", color =
-  NA), ...)
+theme_poster(base_size = 15, strip.background = ggplot2::element_blank(),
+  panel.background = ggplot2::element_blank(),
+  panel.grid.minor = ggplot2::element_line(color = "grey93"),
+  plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
+  ...)
+}
+\arguments{
+\item{base_size}{base font size}
+
+\item{legend.key.size}{size of legend keys (\code{unit})}
+
+\item{legend.title}{title of legend (\code{element_text}; inherits from
+\code{title})}
+
+\item{axis.title.x}{x axis label (\code{element_text}; inherits from
+\code{axis.title})}
+
+\item{axis.text.x}{x axis tick labels (\code{element_text}; inherits from
+\code{axis.text})}
+
+\item{axis.ticks.x}{x axis tick marks (\code{element_line}; inherits from
+\code{axis.ticks})}
+
+\item{axis.line.x}{line along x axis (\code{element_line}; inherits from
+\code{axis.line})}
+
+\item{axis.line.y}{line along y axis (\code{element_line}; inherits from
+\code{axis.line})}
+
+\item{plot.title}{plot title (text appearance) (\code{element_text}; inherits
+from \code{title}) left-aligned by default}
+
+\item{strip.background}{background of facet labels (\code{element_rect};
+inherits from \code{rect})}
+
+\item{...}{additional element specifications not part of base ggplot2. If
+supplied \code{validate} needs to be set to \code{FALSE}.}
+
+\item{panel.background}{background of plotting area, drawn underneath plot
+(\code{element_rect}; inherits from \code{rect})}
+
+\item{panel.grid.minor}{minor grid lines (\code{element_line}; inherits from
+\code{panel.grid})}
+
+\item{plot.background}{background of the entire plot (\code{element_rect};
+inherits from \code{rect})}
 }
 \description{
 Base ggplot2 themes for paper figures and poster figures. All arguments are
