@@ -35,7 +35,7 @@ theme_paper <- function(base_size = 10,
 }
 
 #' @rdname ggplot2_themes
-#' @inheritParams ggplot2::theme_classic
+#' @inheritParams ggplot2::theme_bw
 #' @inheritParams ggplot2::theme
 #' @export
 theme_poster <- function(base_size = 15,
