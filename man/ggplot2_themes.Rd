@@ -3,10 +3,22 @@
 \name{ggplot2_themes}
 \alias{ggplot2_themes}
 \alias{theme_paper}
+\alias{theme_paper_nhg}
 \alias{theme_poster}
 \title{Custom ggplot2 themes.}
 \usage{
-theme_paper(base_size = 10, legend.key.size = ggplot2::unit(0.09, "in"),
+theme_paper(base_size = 10, legend.key.size = ggplot2::unit(0.09,
+  "in"), legend.title = ggplot2::element_blank(),
+  axis.title.x = ggplot2::element_blank(),
+  axis.text.x = ggplot2::element_text(size = 8),
+  axis.ticks.x = ggplot2::element_blank(),
+  axis.line.x = ggplot2::element_line(color = "black"),
+  axis.line.y = ggplot2::element_line(color = "black"),
+  plot.title = ggplot2::element_text(hjust = 0.5),
+  strip.background = ggplot2::element_blank(), ...)
+
+theme_paper_nhg(base_size = 10, text = element_text(family =
+  "NeueHaasGroteskText"), legend.key.size = ggplot2::unit(0.09, "in"),
   legend.title = ggplot2::element_blank(),
   axis.title.x = ggplot2::element_blank(),
   axis.text.x = ggplot2::element_text(size = 8),
@@ -16,51 +28,82 @@ theme_paper(base_size = 10, legend.key.size = ggplot2::unit(0.09, "in"),
   plot.title = ggplot2::element_text(hjust = 0.5),
   strip.background = ggplot2::element_blank(), ...)
 
-theme_poster(base_size = 15, strip.background = ggplot2::element_blank(),
+theme_poster(base_size = 15,
+  strip.background = ggplot2::element_blank(),
   panel.background = ggplot2::element_blank(),
   panel.grid.minor = ggplot2::element_line(color = "grey93"),
-  plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
-  ...)
+  plot.background = ggplot2::element_rect(fill = "transparent", color =
+  NA), ...)
 }
 \arguments{
 \item{base_size}{base font size}
 
-\item{legend.key.size}{size of legend keys (\code{unit})}
+\item{legend.key.size}{size of legend keys (\code{unit}); key background height & width inherit from
+\code{legend.key.size} or can be specified separately}
 
-\item{legend.title}{title of legend (\code{element_text}; inherits from
+\item{legend.title}{title of legend (\code{\link[=element_text]{element_text()}}; inherits from
 \code{title})}
 
-\item{axis.title.x}{x axis label (\code{element_text}; inherits from
-\code{axis.title})}
+\item{axis.title.x}{labels of axes (\code{\link[=element_text]{element_text()}}). Specify all axes' labels (\code{axis.title}),
+labels by plane (using \code{axis.title.x} or \code{axis.title.y}), or individually
+for each axis (using \code{axis.title.x.bottom}, \code{axis.title.x.top},
+\code{axis.title.y.left}, \code{axis.title.y.right}). \code{axis.title.*.*} inherits from
+\code{axis.title.*} which inherits from \code{axis.title}, which in turn inherits
+from \code{text}}
 
-\item{axis.text.x}{x axis tick labels (\code{element_text}; inherits from
-\code{axis.text})}
+\item{axis.text.x}{tick labels along axes (\code{\link[=element_text]{element_text()}}). Specify all axis tick labels (\code{axis.text}),
+tick labels by plane (using \code{axis.text.x} or \code{axis.text.y}), or individually
+for each axis (using \code{axis.text.x.bottom}, \code{axis.text.x.top},
+\code{axis.text.y.left}, \code{axis.text.y.right}). \code{axis.text.*.*} inherits from
+\code{axis.text.*} which inherits from \code{axis.text}, which in turn inherits
+from \code{text}}
 
-\item{axis.ticks.x}{x axis tick marks (\code{element_line}; inherits from
-\code{axis.ticks})}
+\item{axis.ticks.x}{tick marks along axes (\code{\link[=element_line]{element_line()}}). Specify all tick marks (\code{axis.ticks}),
+ticks by plane (using \code{axis.ticks.x} or \code{axis.ticks.y}), or individually
+for each axis (using \code{axis.ticks.x.bottom}, \code{axis.ticks.x.top},
+\code{axis.ticks.y.left}, \code{axis.ticks.y.right}). \code{axis.ticks.*.*} inherits from
+\code{axis.ticks.*} which inherits from \code{axis.ticks}, which in turn inherits
+from \code{line}}
 
-\item{axis.line.x}{line along x axis (\code{element_line}; inherits from
-\code{axis.line})}
+\item{axis.line.x}{lines along axes (\code{\link[=element_line]{element_line()}}). Specify lines along all axes (\code{axis.line}),
+lines for each plane (using \code{axis.line.x} or \code{axis.line.y}), or individually
+for each axis (using \code{axis.line.x.bottom}, \code{axis.line.x.top},
+\code{axis.line.y.left}, \code{axis.line.y.right}). \code{axis.line.*.*} inherits from
+\code{axis.line.*} which inherits from \code{axis.line}, which in turn inherits
+from \code{line}}
 
-\item{axis.line.y}{line along y axis (\code{element_line}; inherits from
-\code{axis.line})}
+\item{axis.line.y}{lines along axes (\code{\link[=element_line]{element_line()}}). Specify lines along all axes (\code{axis.line}),
+lines for each plane (using \code{axis.line.x} or \code{axis.line.y}), or individually
+for each axis (using \code{axis.line.x.bottom}, \code{axis.line.x.top},
+\code{axis.line.y.left}, \code{axis.line.y.right}). \code{axis.line.*.*} inherits from
+\code{axis.line.*} which inherits from \code{axis.line}, which in turn inherits
+from \code{line}}
 
-\item{plot.title}{plot title (text appearance) (\code{element_text}; inherits
+\item{plot.title}{plot title (text appearance) (\code{\link[=element_text]{element_text()}}; inherits
 from \code{title}) left-aligned by default}
 
-\item{strip.background}{background of facet labels (\code{element_rect};
-inherits from \code{rect})}
+\item{strip.background}{background of facet labels (\code{\link[=element_rect]{element_rect()}};
+inherits from \code{rect}). Horizontal facet background (\code{strip.background.x})
+& vertical facet background (\code{strip.background.y}) inherit from
+\code{strip.background} or can be specified separately}
 
 \item{...}{additional element specifications not part of base ggplot2. If
 supplied \code{validate} needs to be set to \code{FALSE}.}
 
+\item{text}{all text elements (\code{\link[=element_text]{element_text()}})}
+
 \item{panel.background}{background of plotting area, drawn underneath plot
-(\code{element_rect}; inherits from \code{rect})}
+(\code{\link[=element_rect]{element_rect()}}; inherits from \code{rect})}
 
-\item{panel.grid.minor}{minor grid lines (\code{element_line}; inherits from
-\code{panel.grid})}
+\item{panel.grid.minor}{grid lines (\code{\link[=element_line]{element_line()}}). Specify major grid lines,
+or minor grid lines separately (using \code{panel.grid.major} or \code{panel.grid.minor})
+or individually for each axis (using \code{panel.grid.major.x}, \code{panel.grid.minor.x},
+\code{panel.grid.major.y}, \code{panel.grid.minor.y}).  Y axis grid lines are horizontal
+and x axis grid lines are vertical. \code{panel.grid.*.*} inherits from
+\code{panel.grid.*} which inherits from \code{panel.grid}, which in turn inherits
+from \code{line}}
 
-\item{plot.background}{background of the entire plot (\code{element_rect};
+\item{plot.background}{background of the entire plot (\code{\link[=element_rect]{element_rect()}};
 inherits from \code{rect})}
 }
 \description{

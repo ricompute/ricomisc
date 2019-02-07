@@ -13,4 +13,4 @@ LazyData: true
 Imports:
     ggplot2,
     rstudioapi
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
