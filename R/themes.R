@@ -104,7 +104,7 @@ save_plot <- function(filename, plot, saveplots = NULL,
                    saveplots)
 
     if (save) {
-        ggplot2::ggsave(filename = here(filename),
+        ggplot2::ggsave(filename = here::here(filename),
                         plot = plot,
                         width = width,
                         height = height,
